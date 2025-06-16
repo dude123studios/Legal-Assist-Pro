@@ -1,54 +1,47 @@
-# React + TypeScript + Vite
+# ⚖️ Local Legal LLM Chrome Extension — "Fineprint"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **We all know you hit agree to terms and conditions without reading any of it**  
+> A privacy-first AI Chrome Extension that analyzes terms, contracts, and fine print **100% locally**, highlights red flags, and presents the legalese in a clean, color-coded UI — powered by a finetuned local LLM.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧠 Core Functionallity
 
-## Expanding the ESLint configuration
+This is not just a chatbot. It's your **personal legal assistant**, built into Chrome.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📝 **Localizes and Finds Legal Texts**: Detects any TOS, contract, or clause on your window and proposes option to open extention.
+- 🔎 **Simplifies**: Gives you a simple Multilingual or Plain English breakdown of important clauses without any confusing or misleading jargon.
+- 🚨 **Detects Red Flags**: Flags alarming clauses (e.g. arbitration, data sharing) with **red alert highlights**.
+- 🤗 **Intelligently Reasons through Follow-ups** User can ask specfic and reasoning based followup questions about policies or anything on the document.
+- 🎨 **Color-Coded UI**: Uses custom trained ML model to detect between the following:
+  - ✅ Green: Safe / Standard clauses
+  - ⚠️ Yellow: Requires attention
+  - ❌ Red: Potentially harmful/legal red flags
+- 🔐 **100% Local, Private**: Option for HuggingFace Serverless, no data sent anywhere about your private queries. 
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📸 Preview
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+![screenshot](preview.png)  
+_A screenshot of red/yellow/green clause classification and simplified summary in the popup._
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🛠️ Tech Stack
+
+- **TypeScript + React**
+- **Chrome Extension API(VITE)**
+- **Transformers.js by Xenova(Hugging Face)**
+- **ONNX Runtime / WebAssembly**
+- **Finetuned Legal Prompt Engineering**
+
+---
+
+## 🚀 Setup Instructions
+
+```bash
+git clone https://github.com/yourname/legal-llm-extension
+cd legal-llm-extension
+npm install
+npm run build
