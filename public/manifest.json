@@ -1,0 +1,41 @@
+
+{
+    "manifest_version": 3,
+    "name": "FinePrint Legal Assistant",
+    "version": "1.0",
+    "description": "Summarizes legal documents with AI assistance.",
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "permissions": [
+      "scripting",  
+      "storage",
+      "https://api-inference.huggingface.co/*" 
+    ],
+    "host_permissions": [
+      "<all_urls>",
+      "https://api-inference.huggingface.co/*" 
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "16": "icon.png",
+        "24": "icon.png",
+        "32": "icon.png"
+      },
+      "default_title": "FinePrint Legal Assistant"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  

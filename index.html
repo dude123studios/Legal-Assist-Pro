@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinePrint Legal Assistant</title>
+    <!--
+      This link imports the 'Inter' font from Google Fonts.
+      It's recommended to include this directly in HTML for potentially faster font loading,
+      even if you also have @import in your CSS.
+      If you prefer to only use the @import in index.css, you can remove this.
+    -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--
+      Vite will automatically inject the link to your compiled CSS (e.g., /assets/index-[hash].css) here
+      during the build process. You do not need to add it manually.
+    -->
+  </head>
+  <body>
+    <!--
+      This is the root element where your React application (Sidebar.tsx) will be mounted.
+      It must have the ID 'root' as specified in src/main.tsx.
+    -->
+    <div id="root"></div>
+
+    <!--
+      This script tag points to your main React application's entry point.
+      Vite will transform this during the build process to point to the
+      correct bundled and hashed JavaScript file (e.g., /assets/main-[hash].js).
+      It must be type="module".
+    -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
+
